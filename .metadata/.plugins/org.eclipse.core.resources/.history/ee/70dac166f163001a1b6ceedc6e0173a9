@@ -1,0 +1,5 @@
+package com.bbva.ninja.microservices.limitsservice.repository;
+
+public interface LimitsRepository {
+
+}

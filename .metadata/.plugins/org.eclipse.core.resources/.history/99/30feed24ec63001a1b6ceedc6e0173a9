@@ -1,0 +1,34 @@
+package com.bbva.ninja.microservices.limitsservice.services;
+
+public class LimitsServiceImpl {
+	
+	@Service
+	public class LimitsServiceImpl implements LimitsService{
+		
+		private static List<Limit> limits = new ArrayList<Limit>();
+		
+		static {
+			Limit l1 = new Limit();
+			
+			l1.setId(1L);
+			l1.setAccount("0956844567812345678");
+			l1.setDescription("limite retiro diario");
+			l1.setMinimum(0);
+			l1.setMaximum(8000);
+			
+			limits.add(l1);
+		}
+
+		@Override
+		public Iterable<Limit> getLimits(String accountId) {
+			return limits;
+		}
+
+		@Override
+		public Limit createLimit(Limit limit) {
+			limits.add(limit);
+			return limit;
+		}	
+
+
+}

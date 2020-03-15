@@ -1,0 +1,9 @@
+package com.bbva.ninja.microservices.limitsservice.model;
+
+public class Message {
+	
+	String code;
+	String message;
+	String type;	
+
+}

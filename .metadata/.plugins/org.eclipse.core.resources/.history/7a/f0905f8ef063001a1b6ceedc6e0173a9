@@ -1,0 +1,80 @@
+package com.bbva.ninja.microservices.limitsservice.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
+@Entity
+@Table(name="limites")
+public class Limit {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	
+	@NotBlank(message = "WrongParameterMissing:ERROR:Description is mandatory")
+	@Column(name="descripcion", length=250, nullable=false, unique=false)
+	private String description;
+	
+	@NotBlank(message = "WrongParameterMissing:ERROR:Account is mandatory")
+	@Column(name="num_cuenta", length=20, nullable=false, unique=false)
+	private String account;
+	
+	@Min(value = 0L, message = "WrongParameter:ERROR:The value must be positive")
+	@Column(name="minimo", nullable=false, unique=false)
+	private Integer minimum;
+	
+	@Min(value = 0L, message = "WrongParameter:ERROR:The value must be positive")
+	@Column(name="maximo", nullable=false, unique=false)
+	private Integer maximum;
+	
+	public Limit() {}
+	
+	public String getAccount() {
+		return account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
+	}
+
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Integer getMinimum() {
+		return minimum;
+	}
+
+	public void setMinimum(Integer minimum) {
+		this.minimum = minimum;
+	}
+
+	public Integer getMaximum() {
+		return maximum;
+	}
+
+	public void setMaximum(Integer maximum) {
+		this.maximum = maximum;
+	}
+	
+}
+
+	}
+
+
+	

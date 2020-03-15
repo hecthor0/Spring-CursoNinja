@@ -1,0 +1,56 @@
+package com.bbva.ninja.microservices.limitsservice.model;
+
+public class Limit {
+	
+	private Long id;
+	
+	private String description;
+	
+	private String account;
+	
+	private Integer minimum;
+	
+	private Integer maximum;
+	
+	public Limit() {}
+	
+	public String getAccount() {
+		return account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
+	}
+
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Integer getMinimum() {
+		return minimum;
+	}
+
+	public void setMinimum(Integer minimum) {
+		this.minimum = minimum;
+	}
+
+	public Integer getMaximum() {
+		return maximum;
+	}
+
+	public void setMaximum(Integer maximum) {
+		this.maximum = maximum;
+	}
+	
+}
+
+	

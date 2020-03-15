@@ -1,0 +1,20 @@
+CREATE TABLE cuentas (
+  num_cuenta VARCHAR(20) PRIMARY KEY,  
+  tipo_cuenta VARCHAR(2) NOT NULL
+);
+
+CREATE TABLE limites (
+  id int auto_increment  PRIMARY KEY,  
+  descripcion VARCHAR(250) NOT NULL,
+  minimo INTEGER NOT NULL,
+  maximo INTEGER NOT NULL,
+  num_cuenta VARCHAR(20),
+  
+  CONSTRAINT FK_LIMITES_CUENTAS FOREIGN KEY (num_cuenta) REFERENCES cuentas (num_cuenta)
+);
+    
+INSERT INTO cuentas (num_cuenta, tipo_cuenta) VALUES
+  ('0956844567812345678','AH');
+  
+INSERT INTO limites (descripcion, num_cuenta, minimo, maximo) VALUES
+  ('limite de retiro diario 2000', '0956844567812345678', 0, 2000);    
